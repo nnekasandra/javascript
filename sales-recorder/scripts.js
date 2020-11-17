@@ -26,8 +26,8 @@ function addRow() {
 
 
     // code that will calculate for the total cost price
-    var totalCostPrice = getElementsByName('cost-price')
-    var totalSellingPrice = getElementsByName('selling-price')
+    var totalCostPrice = document.getElementsByName('cost-price')
+    var totalSellingPrice = document.getElementsByName('selling-price')
     var sumCost = 0;
     var sumSell = 0;
     const calculate = () =>{
