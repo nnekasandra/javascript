@@ -1,5 +1,4 @@
-const itemsRecord = document.createElement('table')
-document.write(itemsRecord)
+// Funtion that allows users add rows and update table
 function addRow() {
     var table=document.getElementById("addTable");
     var rowCount=table.rows.length;
@@ -24,9 +23,31 @@ function addRow() {
     cell3.appendChild(element2)
     cell4.appendChild(element3)
     }
-    
 
 
+    // code that will calculate for the total cost price
+    var totalCostPrice = getElementsByName('cost-price')
+    var totalSellingPrice = getElementsByName('selling-price')
+    var sumCost = 0;
+    var sumSell = 0;
+    const calculate = () =>{
+        // loop that iterate through items in the input and sums them up 
+        for(var i = 0; i<totalCostPrice.length; i++){
+            sumCost += parseFloat(totalCostPrice[i].value)
+        }
+        for(var i = 0; i<totalSellingPrice.length; i++){
+            sumSell += parseFloat(totalSellingPrice[i].value)
+        }
+        var profit = sumSell - sumCost;
+        function profitCheck (){
+            if (profit>0){
+                document.write('You made a profit of ' + profit + ' today!')
+            }else{
+                document.write('You made a loss of ' + profit + ' today!')
+            }
+        }
+        profitCheck();
+    }
 
 
 
